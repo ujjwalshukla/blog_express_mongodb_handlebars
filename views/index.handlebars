@@ -1,1 +1,7 @@
 <h1>{{title}}</h1>
+
+{{#each posts}}
+	<p><a href="/{{slug}}">{{title}}</a></p>
+{{/each}}
+<hr>
+<a href="/new">Create New Post</a>

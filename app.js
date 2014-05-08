@@ -8,8 +8,13 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+var mongoose = require('mongoose');
+var dbURL = 'mongodb://localhost/blogdb';
+
+mongoose.connect(dbURL);
+
 var routes = require('./routes/index');
-var users = require('./routes/users');
+var new_post = require('./routes/new_post');
 
 var app = express();
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
@@ -24,8 +29,8 @@ app.use(bodyParser.urlencoded());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use('/new', new_post);
 app.use('/', routes);
-app.use('/users', users);
 
 /// catch 404 and forwarding to error handler
 app.use(function(req, res, next) {
