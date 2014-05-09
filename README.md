@@ -14,7 +14,8 @@ To run the application, clone it to your local folder
 Install mongodb server, and create a folder "/data" in the directory.
 
 start mongo server using
-    mongod --dbpath="/path/to/data"
+
+	mongod --dbpath="/path/to/data"
     
 start the application from the directory
-    npm start
+	npm start
