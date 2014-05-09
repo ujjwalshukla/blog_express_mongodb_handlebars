@@ -18,4 +18,5 @@ start mongo server using
 	mongod --dbpath="/path/to/data"
     
 start the application from the directory
+
 	npm start
