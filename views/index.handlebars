@@ -1,7 +1,22 @@
-<h1>{{title}}</h1>
-
-{{#each posts}}
-	<p><a href="/{{slug}}">{{title}}</a></p>
-{{/each}}
+<header>
+	<h1>{{title}}</h1>
+</header>
 <hr>
-<a href="/new">Create New Post</a>
+<section>
+	<ul>
+		{{#each posts}}
+			<li>
+				<span class="postTitle">
+					<a href="/{{slug}}">{{title}}</a>
+				</span>
+				<span class="postCreated">
+					{{created_at}}
+				</span>
+			</li>
+		{{/each}}
+	</ul>
+	<hr>
+	<div class="createBtn">
+		<a href="/new">Create New Post</a>
+	</div>
+</section>

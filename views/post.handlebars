@@ -1,5 +1,29 @@
-<h1>{{post.title}}</h1>
+<div>
+	<h1>{{post.title}}</h1>
+	<span class='postTime'>{{post.created_at}}</span>
+</div>
+<br>
+<hr>
 
-<p>{{post.created_at}}</p>
-
-<div>{{post.body}}</div>
+<div class="postBody">{{post.body}}</div>
+<br>
+<hr>
+<br>
+<div>
+	<span><h2>Comments</h2></span>
+	<div class="s-center blk4">
+		<form action="/{{post.slug}}/comments" method="post">
+			<textarea name="comment_body" placeholder="Enter Comments" class="inputBox"></textarea>
+			<br>
+			<input type="submit" value="Submit" class='submit'>
+		</form>
+	</div>
+	{{#each post.comments}}
+		<div class='commentBody'>
+			<span> > {{body}}</span>
+			<span class="postCreated">
+				{{created_at}}
+			</span>
+		</div>
+	{{/each}}
+</div>

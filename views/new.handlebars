@@ -1,8 +1,16 @@
-<form action="/new" method='post'>
-	<p><input type="text" name="post_title" placeholder="Enter post title"></p>
-	<p><input type="text" name="post_slug" placeholder="Enter post slug"></p>
-	<p>
-		<textarea name="post_body" placeholder="Enter post title"></textarea>
-	</p>
-	<input type="submit" value="submit"></input>
-</form>
+<div>
+	<h1>
+		Create New Post
+	</h1>
+</div>
+<hr>
+<div class="s-center blk4">
+	<form action="/new" method='post'>
+		<p><input type="text" name="post_title" placeholder="Enter post title" class="inputBox"></p>
+		<p><input type="text" name="post_slug" placeholder="Enter post slug" class="inputBox"></p>
+		<p>
+			<textarea name="post_body" placeholder="Enter post body" class="inputBox"></textarea>
+		</p>
+		<input type="submit" value="submit" class='submit'></input>
+	</form>
+</div>
